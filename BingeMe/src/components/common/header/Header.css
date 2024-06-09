@@ -3,8 +3,12 @@ header{
     padding: 0;
     width: 100%;
     display: flex;
+    position: sticky;
+    top:0;
+    left:0;
     background-color: blue;
     justify-content: space-around;
+    z-index: 1000;
 }
 
 header .branding{
@@ -44,7 +48,6 @@ nav{
 
 #nav-search{
     width:200px;
-    background-color: red;
     position: relative;
     display: flex;
     border-radius: 20px;
@@ -73,4 +76,113 @@ nav{
     box-sizing: border-box;
 }
 
+#menu-btn, #close-btn{
+    display: none;
+}
 
+.signin-nav{
+    display: none;
+}
+
+@media screen and (max-width:900px){
+    #menu-btn, #close-btn{
+        display: block;
+        background: none;
+        border: none;
+        outline: none;
+    }
+    
+    #close-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    #nav-bar{
+        justify-content: flex-end;
+    }
+    #nav-bar > .nav-links{
+        display: block;
+        position: absolute;
+        padding: 15px 30px ;
+        width: 350px;
+        height: 100vh;
+        background:aqua;
+        top:0;
+        left:-350px;
+        transition: left 0.2s ease-in;
+        box-sizing: border-box;
+    }
+    .nav-item{
+        position: relative;
+        width: 90%;
+        margin: 15px auto;
+    }
+    #header.show-mobile-menu::before {
+        content: "";
+        width: 100vw;
+        height:100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 500;
+        backdrop-filter: blur(5px);
+    }
+
+    #header.show-mobile-menu .nav-links{
+        left:0;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .branding{
+        min-width: 40%;
+    }
+    .branding .brand-logo{
+        width: 45px;
+    }
+    .button-div{
+        display: none;
+    }
+    .branding .brand-name{
+        font-size: 1.2em;
+    }
+    #nav-bar{
+        width:60%
+    }
+    #nav-search{
+        width: auto;
+        justify-content: center;
+        overflow: visible;
+    }
+    #nav-search > input{
+        width: 0px;
+        background: none;
+        transition: all 0.2s ease-in-out;
+    }
+    #nav-search > span{
+        padding: 8px;
+        background: none;
+    }
+    .signin-nav{
+        display: block;
+    }
+    .action-buttons{
+        justify-content: flex-end;
+        /* gap:20px; */
+    }
+    #nav-bar > .nav-links{
+        width:300px;
+    }
+    
+    #nav-search.show-search-bar #search-bar{
+        width: 150px;
+        background: #000;
+        padding-right: 50px;
+    }
+
+    #search-bar.show-search-bar{
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+}

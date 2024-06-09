@@ -2,7 +2,7 @@ import "./Buttons.css"
 
 const Buttons = (props) => {
   return (
-    <button className="primary-btn">{props.name}</button>
+    <button style={{background:props.bgcolor}}className="primary-btn">{props.name}</button>
   )
 }
 const OutlineButton = (props) =>{
