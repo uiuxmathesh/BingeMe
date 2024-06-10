@@ -1,12 +1,13 @@
 import "./Header.css"
+import { useState, useEffect } from "react"
 import logo from "../../../assets/logo.png"
 import Buttons from "../buttons/Buttons"
 
 const Header = () => {
   const PageNames = ["Home", "About us", "Contact"]
-  const navBar = document.getElementById('nav-bar')
-  const menuBtn = document.getElementById('menu-btn')
-  const closeBtn = document.getElementById('close-btn')
+  const [search, setSearch] = useState("");
+  
+
   const toggleMenu = () => {
     document.getElementById('header').classList.toggle('show-mobile-menu')
   }
@@ -31,7 +32,7 @@ const Header = () => {
 
             <div className="action-buttons">
               <div id="nav-search">
-              <input id="search-bar" type="text" placeholder="Search" />
+              <input id="search-bar" onChange={e=>setSearch(e.target.value)} type="text" value={search} placeholder="Search" />
               <span onClick={toggleSearch} className="material-symbols-outlined">search</span>
               </div>
               <div className="button-div">
