@@ -10,5 +10,17 @@
   <body>
     <div id="header"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.addEventListener('scroll', ()=> {
+        const header = document.querySelector('header')
+      if(window.scrollY > 0){
+        header.classList.add('scrolled')
+        console.log('scroll detected')
+      }else{
+        header.classList.remove('scrolled')
+        console.log('scroll undetected')
+      }
+      })
+    </script>
   </body>
 </html>

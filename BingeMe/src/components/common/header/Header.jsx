@@ -1,12 +1,10 @@
 import "./Header.css"
 import { useState} from "react"
-import logo from "../../../assets/logo.png"
 import Buttons from "../buttons/Buttons"
 
 const Header = () => {
   const PageNames = ["Home", "About us", "Contact"]
   const [search, setSearch] = useState("");
-
 
   const toggleMenu = () => {
     document.getElementById('header').classList.toggle('show-mobile-menu')

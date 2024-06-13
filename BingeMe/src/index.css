@@ -1,3 +1,6 @@
+html{
+  font-size: min(max(16px, 1vw), 22px);
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

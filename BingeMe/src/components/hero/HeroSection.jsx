@@ -6,6 +6,8 @@ const HeroSection = () => {
     backgroundImage:`url(${background})`,
   }
 
+  
+
   return (
     <section style={myStyle} id="hero-section">
       <div className="wrapper">
@@ -27,9 +29,10 @@ const HeroSection = () => {
           </div>
 
           <p className='absolute' id="Directors"><strong>Directors </strong>Chad Stahelski</p>
+          
 
       </div>
-    </section>
+      </section>
   );
 }
 
